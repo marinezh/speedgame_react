@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Rubik+Moonrocks&display=swap');
+
+h1 {
+  /* font-family: 'Open Sans', sans-serif; */
+font-family: 'Rubik Moonrocks', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Rubik Moonrocks', cursive;
+  background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game_wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+button {
+  margin-top: 100px;
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: alias;
+  color: black;
+  font-family: inherit;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  text-shadow: 0 0 25px #2548f7;
+  text-shadow: 0 0 35px #256ff7;
+  text-shadow: 0 0 55px #134adf;
+  text-shadow: 0 0 75px #0926b9;
+}
+
+.game_wrapper button {
+  display: flex;
+}
+
+i {
+  font-size: 100px;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
