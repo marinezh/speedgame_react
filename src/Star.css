@@ -1,0 +1,25 @@
+.stars {
+    display: flex;
+    margin: 1rem;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.fa-star {
+    color: rgb(230, 230, 230);
+    font-size: 100px;
+    cursor: pointer;
+    text-shadow: 0 0 15px #25CCF7;
+    text-shadow: 0 0 30px #25CCF7;
+    text-shadow: 0 0 45px #25CCF7;
+    text-shadow: 0 0 60px #25CCF7;
+   
+  }
+
+
+
+
+
+.active {
+    color: lightskyblue;
+  }
