@@ -3,6 +3,11 @@ import "./App.css";
 import GameOver from "./GameOver";
 import Star from "./Star";
 
+import click from './assets/click_sound.ogg';
+import endSound from './assets/game_over.wav'
+import startSound from "./assets/game_start.ogg"
+
+
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -12,8 +17,7 @@ function getRndInteger(min, max) {
 class App extends Component {
   state = {
     score: 0,
-    starsNum: 5,
-    stars: [1, 2, 3],
+    stars: [1, 2, 3, 4, 5],
     pace: 1000,
     gameOver: false,
     gameOn: false,
@@ -33,7 +37,8 @@ class App extends Component {
   clickHandler = (i) => {
     // clickSound.play()
 
-
+    let clickSound = new Audio(click)
+    clickSound.play();
 
     if (this.state.current !== i) {
       return this.stopHandler();
@@ -75,12 +80,17 @@ class App extends Component {
   };
 
   startHandler = () => {
+    let gameStartSound = new Audio(startSound);
+    gameStartSound.play();
     console.log("start clicked");
     this.toggleButtons();
     this.nextStar();
+    this.setState({gameOn: !this.state.gameOn})
   };
 
   stopHandler = () => {
+    let gameOverSound = new Audio(endSound)
+    gameOverSound.play();
     console.log("stop clicked");
     this.toggleButtons();
     clearTimeout(this.timer);
@@ -88,7 +98,7 @@ class App extends Component {
   };
 
   closeHandler = () => {
-    this.setState({ gameOver: !this.state.gameOver });
+    // this.setState({ gameOver: !this.state.gameOver });
     window.location.reload();
     console.log("fff");
   };
