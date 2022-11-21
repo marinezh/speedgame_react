@@ -3,10 +3,9 @@ import "./App.css";
 import GameOver from "./GameOver";
 import Star from "./Star";
 
-import click from './assets/click_sound.ogg';
-import endSound from './assets/game_over.wav'
-import startSound from "./assets/game_start.ogg"
-
+import click from "./assets/click_sound.ogg";
+import endSound from "./assets/game_over.wav";
+import startSound from "./assets/game_start.ogg";
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -29,29 +28,24 @@ class App extends Component {
 
   timer;
 
-  toggleButtons = () => {
+    toggleButtons = () => {
     this.setState({ startButtonActive: !this.state.startButtonActive });
     this.setState({ endButtonActive: !this.state.endButtonActive });
   };
 
   clickHandler = (i) => {
-    // clickSound.play()
-
-    let clickSound = new Audio(click)
+    let clickSound = new Audio(click);
     clickSound.play();
 
     if (this.state.current !== i) {
       return this.stopHandler();
     }
 
-    console.log("was clicked", i);
+    // console.log("was clicked", i);
     this.setState({
       score: this.state.score + 10,
       rounds: 0,
     });
-
-    
-
   };
 
   nextStar = () => {
@@ -68,39 +62,34 @@ class App extends Component {
 
     this.setState({
       current: nextActive,
-      // pace: this.state.pace * 0.95,
+      pace: this.state.pace * 0.95,
       rounds: this.state.rounds + 1,
       // rounds: 0,
     });
-
-    console.log(nextActive);
-    console.log(this.state.current);
     this.timer = setTimeout(this.nextStar, this.state.pace);
-    console.log("rounds", this.state.rounds);
+    
   };
 
   startHandler = () => {
     let gameStartSound = new Audio(startSound);
     gameStartSound.play();
-    console.log("start clicked");
     this.toggleButtons();
     this.nextStar();
-    this.setState({gameOn: !this.state.gameOn})
+    this.setState({ gameOn: !this.state.gameOn });
   };
 
   stopHandler = () => {
-    let gameOverSound = new Audio(endSound)
+    let gameOverSound = new Audio(endSound);
     gameOverSound.play();
-    console.log("stop clicked");
+    
     this.toggleButtons();
     clearTimeout(this.timer);
     this.setState({ gameOver: true });
   };
 
   closeHandler = () => {
-    // this.setState({ gameOver: !this.state.gameOver });
     window.location.reload();
-    console.log("fff");
+    
   };
 
   render() {
@@ -111,12 +100,6 @@ class App extends Component {
           Your score is : <span id="score">{this.state.score}</span>
         </h3>
         <div className="stars">
-          {/* <Star />
-          <Star />
-          <Star />
-          <Star />
-          <Star /> */}
-
           {this.state.stars.map((star, i) => (
             <Star
               key={i}
@@ -137,8 +120,6 @@ class App extends Component {
         {this.state.gameOver && (
           <GameOver score={this.state.score} close={this.closeHandler} />
         )}
-
-
       </div>
     );
   }
