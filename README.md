@@ -2,7 +2,7 @@
 
 ## Speed Game with React.
 
-[Live](https://fascinating-pika-fce731.netlify.app/)
+[Live Link](https://fascinating-pika-fce731.netlify.app/)
 ![Screenshot](Screenshot_speedgame.png)
 
 ### About the project
