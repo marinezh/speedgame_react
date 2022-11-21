@@ -1,22 +1,22 @@
-Project title
-A short description of this project. What it is about, who are target group and why that project was made.
+# Catch a star, make a wish!
 
-Technologies used
-Built with:
+## Speed Game with React.
 
-HTML
-JS
-CSS
-Bootstrap
-Reactjs
-...
-Setup and usage
-Live page here
+![Screenshot](Screenshot_speedgame.png)
 
-Screenshot
-Sources
-GitHub Guides - masterin markdown
-Make a README
-Authors and acknowledgment
-Margit Tennosaar
+### About the project
+
+Speed game is a learninig project which was built as a part of React course with Margit Tenosaar [@margittennosaar](https://www.github.com/margittennosaar)
+
+### Rules
+
+- You should catch starts, as fast as you can.
+- The game is getting fatser.
+- You can miss 3 times. 
+
+### Technologies used
+
+- React.
+
+
 
