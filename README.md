@@ -14,6 +14,12 @@ Speed game is a learninig project which was built as a part of React course with
 - The game is getting fatser.
 - You can miss 3 times. 
 
+### Run the game
+
+´´´
+npm start
+´´´
+
 ### Technologies used
 
 - React.
